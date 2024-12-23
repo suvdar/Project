@@ -86,7 +86,7 @@ public class Lesson_3 {
 
     // Задание 6//
     static void isPositiveOrNegative(int i) {
-        System.out.println(i >= 0 ? "Положительое" : "Отрицательное");
+        System.out.println(i >= 0 ? "Положительное" : "Отрицательное");
     }
 
     // Задание 7//
