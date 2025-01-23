@@ -9,9 +9,6 @@ public class ArrayOfWords {
                 "кашалот", "крокодил", "бегемот", "попугай", "бегемот", "лев", "лев", "лев"
         };
 
-        Set<String> uniqueWords = new HashSet<>(Arrays.asList(words));
-        System.out.println("Уникальные слова: " + uniqueWords);
-
         Map<String, Integer> wordCount = new HashMap<>();
         for (String word : words) {
             Integer count = wordCount.get(word);
@@ -21,10 +18,15 @@ public class ArrayOfWords {
                 wordCount.put(word, count + 1);
             }
         }
+        System.out.println("Сколько раз встречается каждое слово:" + wordCount);
 
-        System.out.println("Сколько раз встречается каждое слово:");
-        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+        List<String> uniqueWords = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry: wordCount.entrySet()) {
+            if (entry.getValue() == 1) {
+                uniqueWords.add(entry.getKey());
+            }
         }
+        System.out.println("Уникальные слова: " + uniqueWords);
+
     }
 }
